@@ -3,12 +3,12 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. Theme Tokens & Variables
+   1. Theme Tokens & Variables (Pure Neutral Charcoal Black - Zero Blue Tint)
    -------------------------------------------------------------------------- */
 :root {
   /* Brand Core Colors */
   --dark: #090B10;
-  --dark-soft: #090B10;
+  --dark-soft: #121318;
   --light: #F7F8FA;
   --white: #FFFFFF;
 
@@ -22,17 +22,17 @@
   --whatsapp: #25D366;
   --whatsapp-hover: #20bd5a;
 
-  /* Default Dark Mode (System Fallback) - Fixed solid background colors */
+  /* Default Dark Mode - Pure neutral charcoal black cards & surfaces */
   --bg-main: #090B10;
   --bg-surface: #090B10;
-  --bg-card: rgba(18, 22, 30, 0.85);
-  --bg-card-hover: rgba(28, 34, 46, 0.95);
+  --bg-card: rgba(16, 17, 22, 0.92);
+  --bg-card-hover: rgba(24, 25, 32, 0.96);
   --border-subtle: rgba(255, 255, 255, 0.1);
   --border-strong: rgba(255, 255, 255, 0.2);
   --text-primary: #F7F8FA;
   --text-secondary: #94A3B8;
   --text-muted: #64748B;
-  --shadow-color: rgba(0, 0, 0, 0.5);
+  --shadow-color: rgba(0, 0, 0, 0.6);
 
   /* Fluid Responsive Measurements (320px Reference -> 1440px Reference) */
   /* 320 -> 36px | 1440 -> 72px */
@@ -109,7 +109,7 @@ body {
    3. Custom Modern Scrollbar (Edge / WebKit / Firefox)
    -------------------------------------------------------------------------- */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 100px;
   height: 10px;
 }
 
