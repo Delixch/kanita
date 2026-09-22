@@ -18,7 +18,6 @@ export default function Header() {
         background: 'var(--bg-surface)',
         backgroundColor: 'var(--bg-surface)',
         borderBottom: '1px solid var(--border-subtle)',
-        transition: 'background-color 0.25s ease, border-color 0.25s ease',
       }}
     >
       <div

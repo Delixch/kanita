@@ -14,34 +14,6 @@ export default function Hero() {
 
   return (
     <section className="section" style={{ position: 'relative', overflow: 'hidden' }}>
-      {/* Background Ambient Glows */}
-      <div
-        style={{
-          position: 'absolute',
-          top: '-10%',
-          left: '10%',
-          width: 'clamp(250px, 40vw, 600px)',
-          height: 'clamp(250px, 40vw, 600px)',
-          borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(59, 232, 255, 0.15) 0%, rgba(0,0,0,0) 70%)',
-          pointerEvents: 'none',
-          zIndex: 0,
-        }}
-      />
-      <div
-        style={{
-          position: 'absolute',
-          top: '20%',
-          right: '5%',
-          width: 'clamp(250px, 40vw, 600px)',
-          height: 'clamp(250px, 40vw, 600px)',
-          borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(255, 90, 31, 0.15) 0%, rgba(0,0,0,0) 70%)',
-          pointerEvents: 'none',
-          zIndex: 0,
-        }}
-      />
-
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div
           style={{
@@ -126,7 +98,7 @@ export default function Hero() {
               </div>
               <div style={{ width: '1px', height: '32px', background: 'var(--border-subtle)' }} />
               <div>
-                <div style={{ fontWeight: 800, fontSize: '1.25rem', color: 'var(--orange)' }}>CHF 14.95</div>
+                <div style={{ fontWeight: 800, fontSize: '1.25rem', color: 'var(--orange)' }}>CHF 29.95</div>
                 <div style={{ fontSize: '0.8125rem', color: 'var(--text-muted)' }}>Ab-Preise Aktionen</div>
               </div>
             </div>
@@ -146,7 +118,7 @@ export default function Hero() {
               src="/images/hero-composition.webp"
               alt="Salt Mobil, Internet, TV und Travel Kampagne"
               width={1200}
-              height={800}
+              height={850}
               priority
               style={{
                 width: '100%',
