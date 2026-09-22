@@ -122,6 +122,33 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* --------------------------------------------------------------------------
+   3. Custom Modern Scrollbar (Edge / WebKit / Firefox)
+   -------------------------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--cyan) 0%, var(--orange) 100%);
+  border-radius: 9999px;
+  border: 2px solid var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--lime) 0%, var(--violet) 100%);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--cyan) var(--bg-main);
+}
+
 /* Page Container Wrapper */
 .container {
   width: 100%;
@@ -139,7 +166,7 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   3. Typography & Badges
+   4. Typography & Badges
    -------------------------------------------------------------------------- */
 h1, h2, h3, h4 {
   font-weight: 800;
@@ -211,7 +238,7 @@ h1, h2, h3, h4 {
 }
 
 /* --------------------------------------------------------------------------
-   4. Buttons & Interactive Elements
+   5. Buttons & Interactive Elements
    -------------------------------------------------------------------------- */
 .btn {
   display: inline-flex;
@@ -275,7 +302,7 @@ h1, h2, h3, h4 {
 }
 
 /* --------------------------------------------------------------------------
-   5. Card Layouts & Perspective FX
+   6. Card Layouts & Dynamic Animations
    -------------------------------------------------------------------------- */
 .grid-offers {
   display: grid;
@@ -305,8 +332,48 @@ h1, h2, h3, h4 {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
+/* Bestseller Pulsing Glow Card Animation */
+.card-pulsing-glow {
+  animation: pulseCardGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes pulseCardGlow {
+  0% {
+    box-shadow: 0 0 15px rgba(59, 232, 255, 0.25), 0 10px 30px var(--shadow-color);
+    border-color: rgba(59, 232, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(59, 232, 255, 0.7), 0 0 15px rgba(255, 90, 31, 0.4);
+    border-color: var(--cyan);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(59, 232, 255, 0.3), 0 10px 30px var(--shadow-color);
+    border-color: rgba(59, 232, 255, 0.6);
+  }
+}
+
+/* Subtle Price Tag Micro Pulse / Shimmer Animation for standard cards */
+.price-micro-pulse {
+  animation: pricePulseShimmer 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes pricePulseShimmer {
+  0% {
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.1));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(59, 232, 255, 0.5));
+    transform: scale(1.03);
+  }
+  100% {
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.1));
+    transform: scale(1);
+  }
+}
+
 /* --------------------------------------------------------------------------
-   6. Form Controls
+   7. Form Controls
    -------------------------------------------------------------------------- */
 .form-group {
   display: flex;
@@ -346,7 +413,7 @@ h1, h2, h3, h4 {
 }
 
 /* --------------------------------------------------------------------------
-   7. Accessibility & Motion Controls
+   8. Accessibility & Motion Controls
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   html, body, *, *::before, *::after {

@@ -29,7 +29,7 @@ export default function OfferCard({ offer, onSelect }: OfferCardProps) {
 
   return (
     <article
-      className="offer-card"
+      className={`offer-card ${offer.popular ? 'card-pulsing-glow' : ''}`}
       style={{
         borderColor: offer.popular ? getBorderGlow(offer.accentColor) : undefined,
       }}
@@ -98,8 +98,11 @@ export default function OfferCard({ offer, onSelect }: OfferCardProps) {
           {offer.description}
         </p>
 
-        {/* Pricing Area */}
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px', marginBottom: '20px' }}>
+        {/* Pricing Area with micro pulse effect for non-bestseller cards */}
+        <div
+          className={`price-container ${!offer.popular ? 'price-micro-pulse' : ''}`}
+          style={{ display: 'flex', alignItems: 'baseline', gap: '10px', marginBottom: '20px', transition: 'transform 0.3s ease' }}
+        >
           <span className={`price ${getGradientClass(offer.accentColor)}`} style={{ fontSize: '2rem', fontWeight: 900 }}>
             {offer.price}
           </span>
