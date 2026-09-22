@@ -3,7 +3,6 @@
 import { useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
 import { CONFIG } from '@/lib/config';
-import { buildWhatsAppUrl } from '@/lib/whatsapp';
 
 interface MobileDrawerProps {
   isOpen: boolean;
@@ -24,21 +23,15 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
 
   if (!isOpen) return null;
 
-  const quickWhatsAppUrl = buildWhatsAppUrl(CONFIG.whatsappNumber, {
-    vorname: 'Interessent',
-    nachname: 'Allgemein',
-    produkt: 'Mobile-Abo Premium',
-    zeit: 'Egal',
-  });
-
   return (
     <div
       style={{
         position: 'fixed',
         inset: 0,
         zIndex: 999,
-        background: 'rgba(9, 11, 16, 0.6)',
-        backdropFilter: 'blur(12px)',
+        background: 'rgba(0, 0, 0, 0.75)',
+        backdropFilter: 'blur(8px)',
+        WebkitBackdropFilter: 'blur(8px)',
         display: 'flex',
         justifyContent: 'flex-end',
       }}
@@ -49,15 +42,19 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
           width: 'min(320px, 85vw)',
           height: '100%',
           background: 'var(--bg-surface)',
+          backgroundColor: 'var(--bg-surface)',
           borderLeft: '1px solid var(--border-strong)',
           padding: '24px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
+          boxShadow: '-10px 0 30px rgba(0, 0, 0, 0.8)',
+          opacity: 1,
         }}
         onClick={(e) => e.stopPropagation()}
       >
         <div>
+          {/* Header row */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
             <span style={{ fontWeight: 900, fontSize: '1.25rem', color: 'var(--text-primary)' }}>Menü</span>
             <button
@@ -65,19 +62,25 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               onClick={onClose}
               aria-label="Menü schließen"
               style={{
-                background: 'transparent',
-                border: 'none',
+                background: 'var(--bg-card)',
+                border: '1px solid var(--border-strong)',
                 color: 'var(--text-primary)',
-                fontSize: '1.5rem',
+                fontSize: '1.25rem',
                 cursor: 'pointer',
-                padding: '4px',
+                width: '36px',
+                height: '36px',
+                borderRadius: '10px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
               }}
             >
               ✕
             </button>
           </div>
 
-          <nav style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          {/* Navigation Links */}
+          <nav style={{ display: 'flex', flexDirection: 'column', gap: '22px' }}>
             <a
               href="#angebote"
               onClick={onClose}
@@ -114,25 +117,19 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               style={{ fontSize: '1.125rem', fontWeight: 700, color: 'var(--text-primary)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}
             >
               <span>Instagram</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
             </a>
           </nav>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Erscheinungsbild</span>
-            <ThemeToggle />
-          </div>
-
-          <a
-            href={quickWhatsAppUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-whatsapp"
-            style={{ width: '100%', textDecoration: 'none' }}
-          >
-            Jetzt über WhatsApp anfragen
-          </a>
+        {/* Bottom Theme Switcher */}
+        <div style={{ paddingTop: '24px', borderTop: '1px solid var(--border-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <span style={{ fontSize: '0.9375rem', fontWeight: 600, color: 'var(--text-secondary)' }}>Erscheinungsbild</span>
+          <ThemeToggle />
         </div>
       </div>
     </div>
