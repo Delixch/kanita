@@ -15,9 +15,8 @@ export default function Header() {
         top: 0,
         zIndex: 100,
         width: '100%',
-        background: 'var(--bg-card)',
-        backdropFilter: 'blur(16px)',
-        WebkitBackdropFilter: 'blur(16px)',
+        background: 'var(--bg-surface)',
+        backgroundColor: 'var(--bg-surface)',
         borderBottom: '1px solid var(--border-subtle)',
         transition: 'background-color 0.25s ease, border-color 0.25s ease',
       }}
