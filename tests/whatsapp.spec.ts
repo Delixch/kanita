@@ -9,9 +9,9 @@ test.describe('WhatsApp Integration & Form Validation Suite', () => {
       produkt: 'Travel – Limited Edition',
       zeit: 'Nachmittags',
     };
-    const phone = '+41 79 123 45 67';
+    const phone = '+41 76 833 10 65';
     const cleanPhone = sanitizePhoneNumber(phone);
-    expect(cleanPhone).toBe('41791234567');
+    expect(cleanPhone).toBe('41768331065');
 
     const message = buildWhatsAppMessage(data);
     expect(message).toContain('Vorname: Anna');
@@ -20,7 +20,7 @@ test.describe('WhatsApp Integration & Form Validation Suite', () => {
     expect(message).toContain('Bevorzugte Kontaktzeit: Nachmittags');
 
     const url = buildWhatsAppUrl(phone, data);
-    expect(url).toContain('https://wa.me/41791234567?text=');
+    expect(url).toContain('https://wa.me/41768331065?text=');
     expect(url).toContain(encodeURIComponent('Vorname: Anna'));
     expect(url).toContain(encodeURIComponent('Travel – Limited Edition'));
   });

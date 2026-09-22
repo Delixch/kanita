@@ -94,14 +94,14 @@ function createHeroSvg() {
     <g transform="translate(200, 150) rotate(-6)">
       <rect x="0" y="0" width="360" height="500" rx="36" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.2)" stroke-width="2" />
       <text x="40" y="100" font-family="-apple-system, sans-serif" font-size="32" font-weight="900" fill="#3BE8FF">SALT MOBILE</text>
-      <text x="40" y="150" font-family="-apple-system, sans-serif" font-size="56" font-weight="900" fill="#FFFFFF">CHF 19.95</text>
+      <text x="40" y="150" font-family="-apple-system, sans-serif" font-size="56" font-weight="900" fill="#FFFFFF">CHF 37.95</text>
     </g>
 
     <g transform="translate(600, 100) rotate(8)">
       <rect x="0" y="0" width="400" height="560" rx="36" fill="rgba(20,24,32,0.85)" stroke="url(#g1)" stroke-width="3" />
       <text x="50" y="100" font-family="-apple-system, sans-serif" font-size="36" font-weight="900" fill="#FF5A1F">SALT HOME</text>
       <text x="50" y="160" font-family="-apple-system, sans-serif" font-size="64" font-weight="900" fill="#C7FF38">10 Gbit/s</text>
-      <text x="50" y="230" font-family="-apple-system, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF">Ultra Fiber Speed</text>
+      <text x="50" y="230" font-family="-apple-system, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF">CHF 39.95 / mtl.</text>
     </g>
   </svg>
   `;
@@ -111,19 +111,19 @@ async function build() {
   const assets = [
     {
       file: 'offer-mobile-premium.webp',
-      svg: createSvg('Mobile Premium', 'Unlimitiert CH + 5G Speed', 'CHF 19.95 / mtl.', 'BESTSELLER', ['#3BE8FF', '#0099FF']),
+      svg: createSvg('Mobile Premium', 'Unlimitiert CH + Europe', 'CHF 37.95 / mtl.', 'BESTSELLER', ['#3BE8FF', '#0099FF']),
     },
     {
       file: 'offer-mobile-plus.webp',
-      svg: createSvg('Mobile Premium+', 'Unlimitiert CH &amp; EU Roaming', 'CHF 29.95 / mtl.', 'EUROPA WIDE', ['#FF5A1F', '#FFB700']),
+      svg: createSvg('Mobile Premium+', 'Unlimitiert Business Zone', 'CHF 53.95 / mtl.', 'BUSINESS ZONE', ['#FF5A1F', '#FFB700']),
     },
     {
       file: 'offer-salt-home.webp',
-      svg: createSvg('Salt Home+', '10 Gbit/s Glasfaser &amp; TV', 'CHF 39.95 / mtl.', 'ULTRASCHNELL', ['#C7FF38', '#00E676']),
+      svg: createSvg('Salt Home+', '10 Gbit/s Fiber &amp; TV 300+', 'CHF 39.95 / mtl.', 'CRAZY DEAL', ['#C7FF38', '#00E676']),
     },
     {
       file: 'offer-travel-edition.webp',
-      svg: createSvg('Travel Edition', 'Global eSIM Roaming Bundle', 'CHF 14.95 / mtl.', 'LIMITIERT', ['#7C5CFF', '#D500F9']),
+      svg: createSvg('Travel Edition', 'EU, US, Canada &amp; Top Roaming', 'CHF 29.95 / mtl.', '-70% RABATT', ['#7C5CFF', '#D500F9']),
     },
     {
       file: 'hero-composition.webp',
@@ -144,9 +144,7 @@ async function build() {
     console.log(`Generated ${item.file} (${stats.size} bytes)`);
   }
 
-  // Create minimal valid MP4 video placeholder
   const dummyVideoPath = path.join(videoDir, 'promo-preview.mp4');
-  // Minimal MP4 file structure
   const mp4Buffer = Buffer.from(
     '000000206674797069736f6d0000020069736f6d69736f32617663316d7034310000000866726565000000086d646174',
     'hex'

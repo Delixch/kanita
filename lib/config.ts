@@ -1,5 +1,7 @@
 export const CONFIG = {
-  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '41791234567',
+  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '41768331065',
+  contactPerson: 'KANITA',
+  partnerName: 'Logic Group AG - Salt Premium Business Partner',
   instagramUrl: process.env.NEXT_PUBLIC_INSTAGRAM_URL || 'https://instagram.com/salt_ch',
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://saltwerbung.vercel.app',
   brandName: 'Salt Promo',

@@ -8,7 +8,7 @@ import PromoVideo from '@/components/PromoVideo';
 import SpecialBundle from '@/components/SpecialBundle';
 import ContactForm from '@/components/ContactForm';
 import SocialFollow from '@/components/SocialFollow';
-import StickyWhatsApp from '@/components/StickyWhatsApp';
+import ScrollToTop from '@/components/ScrollToTop';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -21,11 +21,11 @@ export default function Home() {
         <Hero />
         <Offers onSelectOffer={(name) => setSelectedOffer(name)} />
         <PromoVideo />
-        <SpecialBundle onSelectSpecialOffer={() => setSelectedOffer('Spezialangebot / mehrere Produkte')} />
+        <SpecialBundle onSelectSpecialOffer={() => setSelectedOffer('Spezialangebot / mehere Produkte')} />
         <ContactForm selectedOffer={selectedOffer} onOfferChange={(name) => setSelectedOffer(name)} />
         <SocialFollow />
       </main>
-      <StickyWhatsApp />
+      <ScrollToTop />
       <Footer />
     </div>
   );

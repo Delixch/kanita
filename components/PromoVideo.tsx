@@ -93,7 +93,7 @@ export default function PromoVideo() {
           >
             <video
               ref={videoRef}
-              src="/video/promo-preview.mp4"
+              src="/video/45.mp4"
               poster="/images/promo-poster.webp"
               preload="metadata"
               playsInline
