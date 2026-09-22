@@ -8,7 +8,7 @@
 :root {
   /* Brand Core Colors */
   --dark: #090B10;
-  --dark-soft: #141820;
+  --dark-soft: #090B10;
   --light: #F7F8FA;
   --white: #FFFFFF;
 
@@ -22,11 +22,11 @@
   --whatsapp: #25D366;
   --whatsapp-hover: #20bd5a;
 
-  /* Default Dark Mode (System Fallback) */
-  --bg-main: var(--dark);
-  --bg-surface: var(--dark-soft);
-  --bg-card: rgba(20, 24, 32, 0.75);
-  --bg-card-hover: rgba(30, 36, 48, 0.85);
+  /* Default Dark Mode (System Fallback) - Fixed solid background colors */
+  --bg-main: #090B10;
+  --bg-surface: #090B10;
+  --bg-card: rgba(18, 22, 30, 0.85);
+  --bg-card-hover: rgba(28, 34, 46, 0.95);
   --border-subtle: rgba(255, 255, 255, 0.1);
   --border-strong: rgba(255, 255, 255, 0.2);
   --text-primary: #F7F8FA;
@@ -64,7 +64,7 @@
 [data-theme="light"] {
   --bg-main: #F7F8FA;
   --bg-surface: #FFFFFF;
-  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card: rgba(255, 255, 255, 0.95);
   --bg-card-hover: rgba(255, 255, 255, 1);
   --border-subtle: rgba(9, 11, 16, 0.1);
   --border-strong: rgba(9, 11, 16, 0.2);
@@ -72,22 +72,6 @@
   --text-secondary: #475569;
   --text-muted: #64748B;
   --shadow-color: rgba(9, 11, 16, 0.08);
-}
-
-/* Automatic System Preference for Light Mode if no attribute is set */
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme]) {
-    --bg-main: #F7F8FA;
-    --bg-surface: #FFFFFF;
-    --bg-card: rgba(255, 255, 255, 0.85);
-    --bg-card-hover: rgba(255, 255, 255, 1);
-    --border-subtle: rgba(9, 11, 16, 0.1);
-    --border-strong: rgba(9, 11, 16, 0.2);
-    --text-primary: #090B10;
-    --text-secondary: #475569;
-    --text-muted: #64748B;
-    --shadow-color: rgba(9, 11, 16, 0.08);
-  }
 }
 
 /* --------------------------------------------------------------------------
@@ -107,7 +91,6 @@ html {
   overflow-x: clip;
   background-color: var(--bg-main);
   color: var(--text-primary);
-  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 body {
