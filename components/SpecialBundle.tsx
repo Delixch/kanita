@@ -82,7 +82,7 @@ export default function SpecialBundle({ onSelectSpecialOffer }: SpecialBundlePro
                 marginBottom: '12px',
               }}
             >
-              Für Kundinnen und Kunden, die mehere Angebote kombinieren möchten, gibt es eine besondere Lösung.
+              Für Kundinnen und Kunden, die mehrere Angebote kombinieren möchten, gibt es eine besondere Lösung.
             </p>
 
             <p

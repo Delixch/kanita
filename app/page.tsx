@@ -21,7 +21,7 @@ export default function Home() {
         <Hero />
         <Offers onSelectOffer={(name) => setSelectedOffer(name)} />
         <PromoVideo />
-        <SpecialBundle onSelectSpecialOffer={() => setSelectedOffer('Spezialangebot / mehere Produkte')} />
+        <SpecialBundle onSelectSpecialOffer={() => setSelectedOffer('Spezialangebot / mehrere Produkte')} />
         <ContactForm selectedOffer={selectedOffer} onOfferChange={(name) => setSelectedOffer(name)} />
         <SocialFollow />
       </main>

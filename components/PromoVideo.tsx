@@ -98,18 +98,19 @@ export default function PromoVideo() {
               preload="metadata"
               playsInline
               muted
+              controls
               loop
-              onClick={togglePlay}
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
               aria-label="Salt Promo Angebote Video"
               style={{
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                cursor: 'pointer',
               }}
             />
 
-            {/* Custom Play Overlay Button */}
+            {/* Custom Play Overlay Button (only shown before first user play) */}
             {!isPlaying && (
               <button
                 type="button"
@@ -127,6 +128,7 @@ export default function PromoVideo() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
+                  zIndex: 2,
                   transition: 'background 0.2s ease',
                 }}
               >
