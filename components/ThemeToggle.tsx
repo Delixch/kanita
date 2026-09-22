@@ -7,14 +7,13 @@ export default function ThemeToggle() {
 
   useEffect(() => {
     const saved = localStorage.getItem('salt_theme') as 'dark' | 'light' | null;
-    if (saved) {
-      setTheme(saved);
-      document.documentElement.setAttribute('data-theme', saved);
+    if (saved === 'light') {
+      setTheme('light');
+      document.documentElement.setAttribute('data-theme', 'light');
     } else {
-      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const initialTheme = systemDark ? 'dark' : 'light';
-      setTheme(initialTheme);
-      document.documentElement.setAttribute('data-theme', initialTheme);
+      // Unconditional default to Dark Mode
+      setTheme('dark');
+      document.documentElement.setAttribute('data-theme', 'dark');
     }
   }, []);
 

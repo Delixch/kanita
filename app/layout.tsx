@@ -35,21 +35,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de" suppressHydrationWarning>
+    <html lang="de" data-theme="dark" suppressHydrationWarning>
       <head>
-        {/* Anti-flash script for initial color theme */}
+        {/* Anti-flash script forcing Dark Mode as strict default */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
                 try {
                   var saved = localStorage.getItem('salt_theme');
-                  if (saved) {
-                    document.documentElement.setAttribute('data-theme', saved);
-                  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    document.documentElement.setAttribute('data-theme', 'dark');
-                  } else {
+                  if (saved === 'light') {
                     document.documentElement.setAttribute('data-theme', 'light');
+                  } else {
+                    document.documentElement.setAttribute('data-theme', 'dark');
                   }
                 } catch (e) {}
               })();
