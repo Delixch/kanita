@@ -396,7 +396,125 @@ h1, h2, h3, h4 {
 }
 
 /* --------------------------------------------------------------------------
-   8. Accessibility & Motion Controls
+   8. Site Header (CSS-only, no JS hydration dependency)
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: #090B10;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="light"] .site-header {
+  background-color: #FFFFFF;
+  border-bottom-color: rgba(9, 11, 16, 0.1);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.site-header__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.site-header__logo-text {
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+}
+
+[data-theme="light"] .site-header__logo-text {
+  color: #090B10;
+}
+
+.site-header__logo-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 5px;
+  background: var(--orange);
+  color: #FFFFFF;
+  letter-spacing: 0.04em;
+}
+
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.site-header__link {
+  color: #94A3B8;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: color 0.15s ease;
+}
+
+.site-header__link:hover {
+  color: #3BE8FF;
+}
+
+[data-theme="light"] .site-header__link {
+  color: #475569;
+}
+
+[data-theme="light"] .site-header__link:hover {
+  color: var(--orange);
+}
+
+.site-header__link--icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.site-header__mobile-btn {
+  background: #141820;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+[data-theme="light"] .site-header__mobile-btn {
+  background: #F0F1F3;
+  border-color: rgba(9, 11, 16, 0.15);
+  color: #090B10;
+}
+
+@media (width < 900px) {
+  .site-header__nav,
+  .site-header__theme-toggle {
+    display: none !important;
+  }
+  .site-header__mobile-btn {
+    display: inline-flex !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   9. Accessibility & Motion Controls
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   html, body, *, *::before, *::after {
