@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     siteName: 'Salt Promo',
     images: [
       {
-        url: '/images/hero-composition.webp',
+        url: '/images/og-preview.jpg',
         width: 1200,
-        height: 800,
-        alt: 'Salt Kampagne Angebote',
+        height: 630,
+        alt: 'Salt Promo – Mobile, Home & Travel Angebote',
       },
     ],
     locale: 'de_CH',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Mobile, Internet & Travel Angebote | Aktuelle Aktionen',
     description: 'Entdecke attraktive Mobile-, Internet-, TV- und Travel-Angebote und kontaktiere uns direkt über WhatsApp.',
-    images: ['/images/hero-composition.webp'],
+    images: ['/images/og-preview.jpg'],
   },
 };
 
